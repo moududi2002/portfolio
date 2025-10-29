@@ -1,0 +1,217 @@
+/* Personal Details Section */
+#personal-details {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.personal-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Profile Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #2b6cb0, #3182ce);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.profile-avatar:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.profile-header h3 {
+    color: #1a365d;
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.profile-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Details Grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.details-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detail-card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-left: 4px solid #2b6cb0;
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-card:nth-child(even) {
+    border-left-color: #3182ce;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+.detail-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.detail-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(43, 108, 176, 0.05), transparent);
+    transition: left 0.5s ease;
+}
+
+.detail-item:hover::before {
+    left: 100%;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #1a365d;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.detail-value {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Address Section */
+.address-section {
+    margin-top: 30px;
+}
+
+.address-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.address-section .detail-card {
+    border-left: 4px solid #3182ce;
+    padding: 25px;
+}
+
+.address-section .detail-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.address-section .detail-label i {
+    font-size: 1rem;
+    color: #3182ce;
+}
+
+.address-section .detail-value {
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Animation for cards */
+.detail-card {
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .details-column {
+        gap: 12px;
+    }
+    
+    .detail-card {
+        padding: 15px;
+    }
+    
+    .profile-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+    
+    .profile-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .address-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .address-section .detail-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    #personal-details {
+        padding: 60px 0;
+    }
+    
+    .personal-details-container {
+        padding: 0 10px;
+    }
+    
+    .detail-card {
+        padding: 12px;
+    }
+    
+    .detail-label {
+        font-size: 0.9rem;
+    }
+    
+    .detail-value {
+        font-size: 0.85rem;
+    }
+    
+    .profile-avatar {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+}

@@ -1,0 +1,194 @@
+/* Expertise Area */
+.expertise-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+}
+
+.expertise-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%233498db" fill-opacity="0.02" d="M0,128L48,138.7C96,149,192,171,288,170.7C384,171,480,149,576,144C672,139,768,149,864,154.7C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+    background-size: cover;
+}
+
+.expertise-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    position: relative;
+    font-weight: 700;
+}
+
+.expertise-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.expertise-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(52, 152, 219, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.expertise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(52, 152, 219, 0.05), transparent);
+    transition: left 0.6s ease;
+}
+
+.expertise-card:hover::before {
+    left: 100%;
+}
+
+.expertise-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+.expertise-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.expertise-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 1.8rem;
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.expertise-card:hover .expertise-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.expertise-content h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.expertise-content p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.expertise-level {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #e8f6ef, #d5f0e8);
+    color: #27ae60;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.expertise-card[data-category="ai-ml"] .expertise-level {
+    background: linear-gradient(135deg, #e8f6ef, #d5f0e8);
+    color: #27ae60;
+}
+
+.expertise-card[data-category="leadership"] .expertise-level {
+    background: linear-gradient(135deg, #fff9e6, #fff2cc);
+    color: #f39c12;
+}
+
+.expertise-card[data-category="web"] .expertise-level {
+    background: linear-gradient(135deg, #e6f2ff, #d9ebff);
+    color: #3498db;
+}
+
+.expertise-card[data-category="programming"] .expertise-level {
+    background: linear-gradient(135deg, #f9e6ff, #f2d9ff);
+    color: #9b59b6;
+}
+
+.expertise-card[data-category="projects"] .expertise-level {
+    background: linear-gradient(135deg, #ffe6e6, #ffd9d9);
+    color: #e74c3c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .expertise-card {
+        padding: 25px;
+    }
+    
+    .expertise-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .expertise-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .expertise-section {
+        padding: 40px 0;
+    }
+    
+    .expertise-card {
+        padding: 20px;
+    }
+    
+    .expertise-content h4 {
+        font-size: 1.2rem;
+    }
+}

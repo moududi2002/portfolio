@@ -1,26 +1,35 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "moududi-portfolio",
+  "version": "1.0.0",
+  "description": "MD Abul Ala Moududi - Portfolio Website | Undergraduate CSE Student | Research Enthusiast | ML & AI Learner",
+  "keywords": [
+    "portfolio",
+    "nextjs",
+    "react",
+    "cse",
+    "research",
+    "machine-learning",
+    "ai"
+  ],
+  "author": "MD Abul Ala Moududi",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "next lint"
   },
   "dependencies": {
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "next": "16.0.1"
+    "next": "14.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
-    "eslint": "^9",
-    "eslint-config-next": "16.0.1"
+    "eslint": "^8.0.0",
+    "eslint-config-next": "14.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
