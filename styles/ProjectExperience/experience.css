@@ -1,0 +1,114 @@
+/* styles/ProjectExperience/experience.css */
+#experience {
+    background: #f5f7fa;
+    padding: 80px 0;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.experience-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    border-top: 4px solid var(--secondary-color);
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.experience-date {
+    font-weight: 600;
+    color: var(--secondary-color);
+    background: rgba(52, 152, 219, 0.1);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.experience-card h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.experience-card h4 {
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.experience-card ul {
+    padding-left: 20px;
+}
+
+.experience-card li {
+    margin-bottom: 8px;
+    position: relative;
+    color: #555;
+    line-height: 1.6;
+}
+
+.experience-card li::before {
+    content: '▸';
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .experience-card {
+        padding: 25px;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .experience-date {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-card {
+        padding: 20px;
+    }
+    
+    .experience-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .experience-card h4 {
+        font-size: 1rem;
+    }
+    
+    .experience-card li {
+        font-size: 0.9rem;
+    }
+}
