@@ -1,5 +1,7 @@
 import '../../styles/HomePage/personalDetailsSection.css'
 
+
+
 export default function PersonalDetailsSection() {
   return (
     <section id="personal-details">
@@ -85,6 +87,14 @@ export default function PersonalDetailsSection() {
                   <span className="detail-value">Ongoing B.Sc in CSE at University of Dhaka</span>
                 </div>
               </div>
+
+              <div className="detail-card">
+                <div className="detail-item">
+                  <span className="detail-label">Bank Information</span>
+                  <span className="detail-value">Islami Bank Bangladesh PLC</span>
+                </div>
+              </div>
+
             </div>
           </div>
 
