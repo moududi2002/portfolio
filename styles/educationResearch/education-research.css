@@ -438,3 +438,34 @@
         font-size: 0.85rem;
     }
 }
+
+@media (max-width: 768px) {
+  .skills-list {
+    gap: 8px; /* Reduce gap on mobile */
+    justify-content: center; /* Center align */
+    flex-wrap: wrap; /* Ensure wrapping */
+  }
+  
+  .skill-tag {
+    padding: 8px 16px; /* Smaller padding */
+    font-size: 0.8rem; /* Smaller font */
+    min-width: auto; /* Allow flexible width */
+    flex: 1; /* Add this - Make flexible */
+    min-width: 120px; /* Minimum width */
+    text-align: center; /* Center text */
+    max-width: 45%; /* Limit maximum width */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-list {
+    gap: 6px; /* Even smaller gap */
+  }
+  
+  .skill-tag {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    min-width: 100px;
+    max-width: 48%; /* Adjust for very small screens */
+  }
+}
