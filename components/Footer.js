@@ -10,13 +10,13 @@ export default function Footer() {
             <h3>Abul Ala Moududi</h3>
             <p style={{textAlign: 'justify'}}>Undergraduate CSE Student | Researcher | Tech Enthusiast passionate about AI, ML, Cybersecurity, and Innovative Solutions.</p>
             <br/>
-            <p style={{textAlign: 'justify'}} className="footer-links footer-contact">For More Details pls Contact: <a href='mailto:contact@moududi.researchustad.org' > contact@moududi.researchustad.org</a></p>
+            <p className="footer-links footer-contact">For More Details pls Contact: <a href='mailto:contact@moududi.researchustad.org' > contact@moududi.researchustad.org</a></p>
           </div>
           <div className="footer-section">
             <h3>Quick Links</h3>
             <ul className="footer-links">
               <li><Link href="/">Home</Link></li>
-              <li><Link href="#about">About</Link></li>
+              <li><Link href="/#about">About</Link></li>
               <li><Link href="/education-research">Education & Research</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="copyright">
-          <p>&copy; 2025 Abul Ala Moududi. All Rights Reserved. | Last updated in September 2025</p>
+          <p>&copy; {new Date().getFullYear()} Abul Ala Moududi. All Rights Reserved. | Last updated in October 2025</p>
         </div>
       </div>
     </footer>

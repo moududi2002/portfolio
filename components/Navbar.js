@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import BackToTop from './UI/BackToTop'
 import '../styles/navbar.css'
 
 export default function Navbar() {
@@ -49,9 +50,11 @@ export default function Navbar() {
           <li><Link href="/project-experience" onClick={closeMenu}>Projects & Experience</Link></li>
           <li><Link href="/cocorricular-skills-awards" onClick={closeMenu}>Co-Curricular, Skills & Awards</Link></li>
           <li><Link href="/certifications-workshops" onClick={closeMenu}>Certifications & Workshops</Link></li>
+          <li><Link href="/achievements-gallery" onClick={closeMenu}>Achievements Gallery</Link></li> 
           <li><Link href="/contact" onClick={closeMenu}>Contact</Link></li>
         </ul>
       </div>
+      <BackToTop />
     </nav>
   )
 }
