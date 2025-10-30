@@ -6,7 +6,7 @@ const ExperienceSection = () => {
   const experiences = [
     {
       id: 1,
-      title: 'Assistant Teacher (Science)',
+      title: 'Assistant Science Teacher (Part-Time)',
       date: 'Jun 2025 - Present',
       company: 'Hazi Jan Mohammad High School',
       responsibilities: [
@@ -29,7 +29,7 @@ const ExperienceSection = () => {
     {
       id: 3,
       title: 'Head of IT & Co-Founder',
-      date: 'Aug 2024 - Present',
+      date: 'Aug 2024 - Jun 2025',
       company: 'Warishaan Apparels Limited',
       responsibilities: [
         'Directed comprehensive IT operations',
