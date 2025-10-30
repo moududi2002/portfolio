@@ -9,6 +9,8 @@ export default function Footer() {
           <div className="footer-section">
             <h3>Abul Ala Moududi</h3>
             <p style={{textAlign: 'justify'}}>Undergraduate CSE Student | Researcher | Tech Enthusiast passionate about AI, ML, Cybersecurity, and Innovative Solutions.</p>
+            <br/>
+            <p style={{textAlign: 'justify'}} className="footer-links footer-contact">For More Details pls Contact: <a href='mailto:contact@moududi.researchustad.org' > contact@moududi.researchustad.org</a></p>
           </div>
           <div className="footer-section">
             <h3>Quick Links</h3>

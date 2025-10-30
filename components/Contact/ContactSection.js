@@ -1,11 +1,14 @@
 // components/Contact/ContactSection.js
 'use client';
 import React, { useEffect } from 'react';
+import emailjs from 'emailjs-com';
 import '../../styles/Contact/contact.css';
 
 const ContactSection = () => {
   useEffect(() => {
-    // Form submission
+    // EmailJS initialization with your API key
+    emailjs.init("public_UdnmYRxIVWFH2DX66");
+    
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
       contactForm.addEventListener('submit', async function(e) {
@@ -17,20 +20,37 @@ const ContactSection = () => {
         submitBtn.disabled = true;
         
         try {
-          const formData = new FormData(this);
-          const response = await fetch('contact.php', {
-            method: 'POST',
-            body: formData
-          });
+          // Send email to yourself
+          const result = await emailjs.sendForm(
+            'service_gnrm9u5',    // Your service ID
+            'template_dqpcrb8',   // Your template ID for receiving messages
+            this                  // form element
+          );
+
+          // Auto-reply to the user who sent the message
+          const userEmail = this.querySelector('#email').value;
+          const userName = this.querySelector('#name').value;
           
-          if (response.ok) {
+          await emailjs.send(
+            'service_gnrm9u5',    // Your service ID
+            'template_fe40ini', // You need to create this template for auto-reply
+            {
+              to_email: userEmail,
+              to_name: userName,
+              from_name: 'Abul Ala Moududi',
+              reply_to: 'moududi2002@gmail.com'
+            }
+          );
+          
+          if (result.status === 200) {
             showToast('Message sent successfully! I will connect to you very soon', 'success');
             this.reset();
           } else {
             showToast('Error sending message. Please try again.', 'error');
           }
         } catch (error) {
-          showToast('Network error. Please try again.', 'error');
+          console.error('Email sending error:', error);
+          showToast('Error sending message. Please try again.', 'error');
         }
         
         submitBtn.textContent = originalText;
@@ -190,7 +210,7 @@ const ContactSection = () => {
             <div className="contact-form-card">
               <div className="contact-form">
                 <h3>Send Me a Message</h3>
-                <form id="contactForm" action="contact.php" method="POST">
+                <form id="contactForm">
                   <div className="form-group">
                     <label htmlFor="name">Your Name</label>
                     <input type="text" id="name" name="name" className="form-control" required />
