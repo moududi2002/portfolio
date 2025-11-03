@@ -4,17 +4,14 @@ import '../../styles/educationResearch/education-research.css'
 
 const EducationResearch = () => {
   useEffect(() => {
-    // Education Section Animation
     const timelineItems = document.querySelectorAll('.timeline-item')
     const skillTags = document.querySelectorAll('.skill-tag')
 
     function isInViewport(element) {
       const rect = element.getBoundingClientRect()
       return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.bottom >= 0
       )
     }
 
@@ -26,7 +23,7 @@ const EducationResearch = () => {
         }
       })
 
-      // Research interests animation
+      // Research interests animation - more flexible for mobile
       const researchInterestsSection = document.getElementById('research-interests')
       if (researchInterestsSection && isInViewport(researchInterestsSection)) {
         skillTags.forEach(tag => {
@@ -38,14 +35,27 @@ const EducationResearch = () => {
       }
     }
 
-    // Initial check with delay
-    setTimeout(handleScrollAnimation, 800)
+    // Initial check
+    handleScrollAnimation()
 
-    // Check on scroll
-    window.addEventListener('scroll', handleScrollAnimation)
+    // Check on scroll with throttle for better performance
+    let ticking = false
+    const scrollHandler = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScrollAnimation()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', scrollHandler)
+    window.addEventListener('resize', handleScrollAnimation)
 
     return () => {
-      window.removeEventListener('scroll', handleScrollAnimation)
+      window.removeEventListener('scroll', scrollHandler)
+      window.removeEventListener('resize', handleScrollAnimation)
     }
   }, [])
 
