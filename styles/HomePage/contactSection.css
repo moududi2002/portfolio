@@ -243,6 +243,8 @@
     text-decoration: none;
     font-weight: 600;
     transition: var(--transition);
+    gap: 8px;
+    display: flex;
 }
 
 /* Desktop */
